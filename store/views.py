@@ -71,8 +71,8 @@ def show_goods_detail(request):
 def add_cart(request):
     if  not request.session.has_key('customer_id'):
         print('請先登入')
-        return HttpResponseRedirect('login/')
-
+        return HttpResponseRedirect('/login/')
+    
     goodsid = int(request.GET['id'])
     goodsname = request.GET['name']
     goodsprice = float(request.GET['price'])
@@ -102,7 +102,7 @@ def add_cart(request):
 
     page = request.GET['page']
     if page == "detail":
-        return HttpResponseRedirect('/detail/?id=' + str(goodsid))
+        return HttpResponseRedirect('/detail/?id=' + str(goodsid) )
     else:
         return HttpResponseRedirect('/list/')
 

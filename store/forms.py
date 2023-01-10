@@ -1,4 +1,6 @@
 from django import forms
+#表單類，驗證!，凡有輸入 必有驗證，
+
 
 class LeginForm(forms.Form):
     userid = forms.CharField(label='客戶帳號', required=True)
